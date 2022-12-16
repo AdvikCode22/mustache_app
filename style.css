@@ -1,0 +1,25 @@
+@keyframes colors{
+    0%{box-shadow: 1px 1px 25px lightcoral}
+    33%{box-shadow: 1px 1px 25px lightgoldenrodyellow}
+    66%{box-shadow: 1px 1px 25px lightgreen;}
+    100%{box-shadow: 1px 1px 25px lightcoral}
+}
+
+canvas{
+    animation-name: colors;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colors2{
+    0%{background-color: lightgoldenrodyellow;}
+    33%{background-color: lightgreen;}
+    66%{background-color: lightsalmon;}
+    100%{background-color: lightgoldenrodyellow;}
+}
+
+h1{
+    animation-name: colors2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
