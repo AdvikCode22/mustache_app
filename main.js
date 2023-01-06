@@ -1,5 +1,11 @@
-function preload(){
+nose_x = ""
+nose_y = ""
+reye_x = ""
+reye_y = ""
 
+function preload(){
+    mustache = loadImage('https://i.postimg.cc/fRPKKLYr/th-removebg-preview.png')
+    goggles = loadImage('https://i.postimg.cc/x8Crm8v1/Red-Sunglasses-removebg-preview.png')
 }
 
 function setup(){
@@ -15,6 +21,9 @@ function setup(){
 
 function draw(){
     image(cam,0,0,400,400)
+
+    image(mustache,nose_x,nose_y,100,50)
+    image(goggles,reye_x,reye_y,130,50)
 }
 
 function capture(){
@@ -30,5 +39,12 @@ function gotResults(results){
         console.log(results)
         console.log("X of Place Where Mustache is : " + results[0].pose.nose.x)
         console.log("Y of Place Where Mustache is : " + results[0].pose.nose.y)
+        console.log("X of Place Where Goggles Are : " + results[0].pose.rightEye.x)
+        console.log("Y of Place Where Goggles Are : " + results[0].pose.rightEye.y)
+
+        nose_x = results[0].pose.nose.x-48
+        nose_y = results[0].pose.nose.y+5
+        reye_x = results[0].pose.rightEye.x-33
+        reye_y = results[0].pose.rightEye.y-20
     }
 }
